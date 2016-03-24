@@ -1,0 +1,21 @@
+
+plugin.tx_mrmobile {
+# cat=Mr.Mobile Config//01; type=string; label=Mobile-Domain
+	Domain =
+# cat=Mr.Mobile Config//01; type=string; label=Desktop-Domain
+	DesktopDomain = 
+# cat=Mr.Mobile Config/disable/02; type=boolean; label=realURL
+	realurlEnable = 0
+# cat=Mr.Mobile Config/disable/03; type=boolean; label=TYPO3 NoCaching
+	Caching = 0
+# cat=Mr.Mobile Config/disable/04; type=boolean; label=JS Concateant
+	concatenateJs = 0
+# cat=Mr.Mobile Config/disable/05; type=boolean; label=CSS Concateant
+	concatenateCss = 0
+# cat=Mr.Mobile Config/disable/06; type=boolean; label=JS Compression	
+	compressJs = 0
+# cat=Mr.Mobile Config/disable/07; type=boolean; label=CSS Compression	
+	compressCss = 0
+# cat=Mr.Mobile Config//08; type=string; label=Meta robots
+	meta.robots = NOINDEX,FOLLOW
+}

@@ -1,0 +1,29 @@
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:mr_mobile/Configuration/TypoScript/setup/Config.txt">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:mr_mobile/Configuration/TypoScript/setup/Page.txt">
+
+plugin.tx_dyncss {
+    overrides {
+
+        fontFamilySansSerif = TEXT
+        fontFamilySansSerif.value = Arial, sans-serif
+
+        headerBorderColor = TEXT
+        headerBorderColor.value = #f0f000
+
+        pageBg = TEXT
+        pageBg.value = #fff
+        footerBg = TEXT
+        footerBg.value = #fff
+
+        footerBorderColor = TEXT
+        footerBorderColor.value = #333
+        NavOverlayBg = TEXT
+        NavOverlayBg.value = rgba(0, 0, 0, .9)
+        btnToggleNavHeight = TEXT
+        btnToggleNavHeight.value = 50px
+        btnToggleNavColor = TEXT
+        btnToggleNavColor.value = #333
+        headerBorderColor = TEXT
+        headerBorderColor.value = #333
+    }
+}

@@ -1,0 +1,12 @@
+plugin.Tx_Formhandler.settings {	
+	formValuesPrefix = contactform
+	
+	masterTemplateFile = {$formhandler.rootPath}/Resources/master.html
+	isErrorMarker {
+    	default = has-error
+    }
+	
+	
+}
+
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:mr_mobile/Extensions/formhandler/Resources/contact/setup.txt">

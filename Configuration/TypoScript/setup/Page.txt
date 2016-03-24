@@ -1,0 +1,110 @@
+
+mobile = PAGE
+mobile {
+	typeNum = 500
+
+	meta < page.meta
+    meta {
+        robots = {$plugin.tx_mrmobile.meta.robots}
+        viewport = width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no
+    }
+
+	headerData.651 = COA
+	headerData.651 {
+		10 = TEXT
+		10.typolink {
+		    parameter = {page:uid}
+		    parameter.insertData = 1
+		    useCacheHash = 1
+		    addQueryString = 1
+		    addQueryString.method = GET
+		    addQueryString.exclude = id
+		    returnLast = url
+		}
+		10.wrap = <link rel="canonical" href="{$plugin.tx_mrmobile.DesktopDomain}/|" />
+	}
+	includeCSS {
+		main  = {$plugin.tx_mrmobile.filepaths.less}main.less
+	}
+
+	includeJSFooterlibs {
+		modernizr = https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js
+		modernizr {
+		    async = 1
+			forceOnTop = 1
+			disableCompression = 1
+			excludeFromConcatenation = 1
+			external = 1
+		}
+		jQuery = https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js
+		jQuery {
+		    async = 1
+			forceOnTop = 1
+			disableCompression = 1
+			excludeFromConcatenation = 1
+			external = 1
+		}
+	}
+	
+	includeJSFooter {
+	    async = 1
+		mr_mobile_dlmenu = {$plugin.tx_mrmobile.filepaths.javascript}libs/jquery.dlmenu.js
+		mr_mobile_main = {$plugin.tx_mrmobile.filepaths.javascript}main.js
+	}
+	
+    10 = FLUIDTEMPLATE
+    10 {
+    	templateName = Default
+    	file =  {$plugin.tx_mrmobile.filepaths.templates}Default.html
+ 		partialRootPaths {
+ 			10 = {$plugin.tx_mrmobile.filepaths.partials}
+ 			20 = {$plugin.tx_mrmobile.filepaths.customPartials}
+ 		}
+  		layoutRootPaths {
+  			10 = {$plugin.tx_mrmobile.filepaths.layouts}
+  			20 = {$plugin.tx_mrmobile.filepaths.customLayouts}
+  		}
+  		templateRootPaths {
+  			10 = {$plugin.tx_mrmobile.filepaths.templates}
+  			20 = {$plugin.tx_mrmobile.filepaths.customTemplates}
+  		}
+		variables {
+	    	BeLayout = TEXT
+	    	BeLayout.data = levelfield:-2,backend_layout_next_level,slide
+	    	BeLayout.override.field = backend_layout
+    	}
+	    settings {
+	    	rootPid = {$plugin.tx_mrmobile.rootPid}
+	    	footerPid = {$plugin.tx_mrmobile.footerPid}
+	    	logoFile = {$plugin.tx_mrmobile.logoFile}
+	    	pageName = {$plugin.tx_mrmobile.pageName}
+	    	mainContentColumn = {$plugin.tx_mrmobile.mainContentColumn}
+	    }
+    }
+
+}
+
+page {
+	headerData.651 = COA
+	headerData.651 {
+		20 = TEXT
+		20.typolink {
+		    parameter = {page:uid}
+		    parameter.insertData = 1
+		    useCacheHash = 1
+		    addQueryString = 1
+		    addQueryString.method = GET
+		    addQueryString.exclude = id
+		    returnLast = url
+		}
+		20.wrap = <link rel="alternate" media="only screen and (max-width: 640px)" id="alternate-mobileplus" href="{$plugin.tx_mrmobile.Domain}/|" />
+	}
+}
+
+[globalString = IENV:TYPO3_REQUEST_HOST = {$plugin.tx_mrmobile.Domain}*]
+page >
+page.typeNum = 500
+mobile.typeNum = 0
+[else]
+mobile >
+[end]

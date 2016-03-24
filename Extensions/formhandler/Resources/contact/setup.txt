@@ -1,0 +1,52 @@
+
+plugin.Tx_Formhandler.settings.predef.contactform {
+	debug = 0
+	name = Kontaktformular
+	formValuesPrefix = contact
+	langFile.Basic = {$formhandler.rootPath}/Resources/contact/lang.xml
+  	templateFile = {$formhandler.rootPath}/Resources/contact/template.html
+	
+	# This block defines the error checks performed when the user hits submit.
+	validators {
+		1.class = Validator_Default
+		1.config.fieldConf {
+			name.errorCheck.1 = required
+			phone.errorCheck.1 = required
+		}
+	}
+
+	ajax {
+		class = AjaxHandler_JQuery
+		config {
+			ajaxSubmit = 1
+			jsPosition = footer
+			submitButtonSelector = #smallContactSubmit
+			ajaxSubmitLoader = <span class="loading_ajax-submit glyphicon glyphicon-repeat" aria-hidden="true" style="display:none;"></span>
+		}
+	}
+
+	# Finishers are called after the form was submitted successfully (without errors).
+	finishers {
+
+		# Finisher_Mail sends emails to an admin and/or the user.
+		1.class = Tx_Formhandler_Finisher_Mail
+		1.config {
+			checkBinaryCrLf = message
+			admin {						
+				templateFile = TEXT
+				templateFile.value = {$formhandler.rootPath}/Resources/contact/email-admin.html
+				sender_email = {$formhandler.email.admin.sender_email}
+				sender_name = CR-Consult
+				to_email = {$formhandler.email.admin.to_email}
+				subject = TEXT
+				subject.value = Kontakt
+			}				
+		}
+		2.class = Finisher_SubmittedOK
+		2.config.returns = 1
+	}
+}
+
+#lib.formhandler.contact < plugin.tx_formhandler_pi1
+#lib.formhandler.contact.usePredef = contactform.
+

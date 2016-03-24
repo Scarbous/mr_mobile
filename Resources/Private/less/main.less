@@ -1,0 +1,161 @@
+@bootstrapUri: 'lib/bootstrap/';
+@templatePath: '/typo3conf/ext/mr_mobile';
+
+@btnToggleNavHeight: 50px; // The height of the button area
+@btnToggleNavWidth: @btnToggleNavHeight; // The width of the button area
+@btnToggleNavborder-thickness: 3px; // The thickness of the button border
+@btnToggleNavBarThickness: 8px; // The thickness of the button bars
+@btnToggleNavPad: 10px; // The left/right padding between button area and bars.
+@btnToggleNavbarSpace: 2px; // The spacing between button bars
+@btnToggleNavTransistionDuration: 250ms; // The transition duration
+@btnToggleNavColor: #333;
+
+@NavOverlayBg: rgba(0, 0, 0, .9);
+
+@headerHeight: @grid-gutter-width + @btnToggleNavHeight;
+@headerBorderColor: @btnToggleNavColor;
+@footerBorderColor: @btnToggleNavColor;
+@pageBg: #fff;
+@footerBg: #fff;
+@footerBorderColor: @btnToggleNavColor;
+
+@import "DEV.less";
+
+@import "variables.less";
+@import "bootstrap.less";
+@import "animations.less";
+@import "base.less";
+@import "nav-toggle.less";
+@import "type.less";
+@import "lib/dlmenu/component.less";
+
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+}
+
+body > .navOverlay {
+  position: fixed;
+  z-index: 500;
+  right: 0;
+  top: @headerHeight;
+  bottom: 0;
+  left: 0;
+  background-color: transparent;
+  visibility: hidden;
+  -webkit-transition: all 400ms ease-in-out;
+  -moz-transition: all 400ms ease-in-out;
+  -ms-transition: all 400ms ease-in-out;
+  -o-transition: all 400ms ease-in-out;
+  transition: all 400ms ease-in-out;
+}
+
+body.navOpen > .navOverlay {
+  background-color: @NavOverlayBg;
+  visibility: visible;
+}
+
+#pageContent {
+  background: @pageBg;
+  //position:fixed;
+  //margin-top:@headerHeight;
+  //left:0;
+  //right:0;
+  //bottom:0;
+  //overflow-y:scroll;
+  //-webkit-overflow-scrolling: touch;
+  //overflow-x:hidden;
+}
+
+#headerImage {
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+body.navOpen > #pageContent {
+  overflow: hidden;
+  -webkit-overflow-scrolling: auto;
+}
+
+body > header {
+  z-index: 2000;
+  position: relative;
+  height: @headerHeight;
+  > .header-bar {
+    height: @headerHeight;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 5px solid @headerBorderColor;
+    background: @pageBg;
+  }
+
+  .logo {
+    position: absolute;
+    left: @grid-gutter-width/2;
+    top: @grid-gutter-width/2;
+    height: @btnToggleNavHeight;
+    display: block;
+    img {
+      max-height: 100%;
+      width: auto;
+    }
+  }
+  .btn-toggle-nav {
+    background: @pageBg;
+    position: fixed;
+    right: @grid-gutter-width/2;
+    top: @grid-gutter-width/2;
+  }
+}
+
+#pageContent > main {
+  padding: @grid-gutter-width/2
+}
+
+#pageContent > footer {
+  background: @footerBg;
+  color: @text-color;
+  border-top: 5px solid @text-color;
+  padding: 10px 0;
+
+  .footer-nav {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+    a {
+      padding: 5px 0;
+    }
+    li {
+      display: inline-block;
+    }
+    li + li {
+      margin-left: 15px;
+    }
+  }
+}
+
+.flag {
+  width: 26px;
+  &:before {
+    content: '';
+    width: 100%;
+    height: 60%;
+    background-size: 100% 100%;
+    display: inline-block;
+  }
+  /* germany */
+  &.de:before {
+    background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBoZWlnaHQ9IjYwMCIgdmlld0JveD0iMCAwIDUgMyI+DQo8cGF0aCBkPSJtMCwwaDV2M2gtNXoiLz4NCjxwYXRoIGZpbGw9IiNkMDAiIGQ9Im0wLDFoNXYyaC01eiIvPg0KPHBhdGggZmlsbD0iI2ZmY2UwMCIgZD0ibTAsMmg1djFoLTV6Ii8+DQo8L3N2Zz4NCg==');
+  }
+  /* united_kingdom */
+  &.gb:before {
+    background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgNjAgMzAiIGhlaWdodD0iNjAwIj4NCjxkZWZzPg0KPGNsaXBQYXRoIGlkPSJ0Ij4NCjxwYXRoIGQ9Im0zMCwxNWgzMHYxNXp2MTVoLTMwemgtMzB2LTE1enYtMTVoMzB6Ii8+DQo8L2NsaXBQYXRoPg0KPC9kZWZzPg0KPHBhdGggZmlsbD0iIzAwMjQ3ZCIgZD0ibTAsMHYzMGg2MHYtMzB6Ii8+DQo8cGF0aCBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iNiIgZD0ibTAsMGw2MCwzMG0wLTMwbC02MCwzMCIvPg0KPHBhdGggc3Ryb2tlPSIjY2YxNDJiIiBzdHJva2Utd2lkdGg9IjQiIGQ9Im0wLDBsNjAsMzBtMC0zMGwtNjAsMzAiIGNsaXAtcGF0aD0idXJsKCN0KSIvPg0KPHBhdGggc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjEwIiBkPSJtMzAsMHYzMG0tMzAtMTVoNjAiLz4NCjxwYXRoIHN0cm9rZT0iI2NmMTQyYiIgc3Ryb2tlLXdpZHRoPSI2IiBkPSJtMzAsMHYzMG0tMzAtMTVoNjAiLz4NCjwvc3ZnPg0K');
+  }
+}

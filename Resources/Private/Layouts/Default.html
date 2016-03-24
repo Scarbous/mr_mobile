@@ -1,0 +1,23 @@
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+{namespace MrM=Scarbous\MrMobile\ViewHelpers}
+
+<header>
+    <div class="header-bar">
+        <a href="/" class="logo">
+            <img src="{f:uri.image(src: settings.logoFile)}" height="50" alt="{settings.pageName}">
+        </a>
+        <button id="navToggle" class="btn-toggle-nav dl-trigger"><span></span></button>
+    </div>
+    <nav id="dl-menu" class="dl-menuwrapper">
+        <ul class="dl-menu">
+            <f:render partial="mainNav" arguments="{pid:settings.rootPid}"/>
+        </ul>
+    </nav>
+</header>
+
+<div class="navOverlay"></div>
+<div id="pageContent">
+    <f:render section="main"/>
+    <f:render partial="Footer" arguments="{footerPid:settings.footerPid}"/>
+    <f:render section="FooterAfter" arguments="{all}" optional="1"/>
+</div>

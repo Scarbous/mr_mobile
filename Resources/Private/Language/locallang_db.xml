@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>database</type>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="tabs.mrmobile">Mr. Mobile</label>
+			<label index="palettes.mrmobile">Mr. Mobile</label>
+			<label index="hide_on_checkbox_1_formlabel">Hide</label>
+			<label index="page.tx_mrmobile_hide_on_smartphone">Smartphone</label>
+			<label index="page.tx_mrmobile_hide_on_tablet">Tablet</label>
+			<label index="page.tx_mrmobile_hide_on_desktop">Desktop</label>
+			<label index="tt_content.tx_mrmobile_hide_on_smartphone">Smartphone</label>
+			<label index="tt_content.tx_mrmobile_hide_on_tablet">Tablet</label>
+			<label index="tt_content.tx_mrmobile_hide_on_desktop">Desktop</label>
+		</languageKey>
+        <languageKey index="de" type="array">
+			<label index="tabs.mrmobile">Mr. Mobile</label>
+			<label index="palettes.mrmobile">Mr. Mobile</label>
+			<label index="hide_on_checkbox_1_formlabel">Ausblenden</label>
+			<label index="page.tx_mrmobile_hide_on_smartphone">Smartphone</label>
+			<label index="page.tx_mrmobile_hide_on_tablet">Tablet</label>
+			<label index="page.tx_mrmobile_hide_on_desktop">Desktop</label>
+			<label index="tt_content.tx_mrmobile_hide_on_smartphone">Smartphone</label>
+			<label index="tt_content.tx_mrmobile_hide_on_tablet">Tablet</label>
+			<label index="tt_content.tx_mrmobile_hide_on_desktop">Desktop</label>
+        </languageKey>
+	</data>
+</T3locallang>

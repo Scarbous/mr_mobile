@@ -1,0 +1,13 @@
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+<v:page.menu.directory pages="{pid}" class="nav" levels="100" expandAll="1" as="nav">
+	<f:for each="{nav}" as="el">
+		<li class="{f:if(condition:el.hasSubPages,then:'sub')} {el.class}">
+			<v:page.link pageUid="{el.uid}">{el.title}</v:page.link>
+			<f:if condition="{el.hasSubPages}">
+				<ul class="dl-submenu">
+					<f:render partial="mainNav" arguments="{pid:el.uid}" />
+				</ul>
+			</f:if>
+		</li>
+	</f:for>
+</v:page.menu.directory>

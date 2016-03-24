@@ -1,0 +1,23 @@
+mobile.config {
+    doctype = html5
+    linkVars = L
+    sys_language_uid = 0
+    language = de
+    htmlTag_langKey = de
+    locale_all = de_DE.UTF8
+    sys_language_mode = strict
+    sys_language_overlay = hideNonTranslated
+    no_cache = {$plugin.tx_mrmobile.Caching}
+    disablePrefixComment = 1
+    renderCharset = utf-8
+    additionalHeaders = Content-Type:text/html;charset=utf-8
+    removeDefaultJS = 1
+    concatenateJs = {$plugin.tx_mrmobile.concatenateJs}
+    concatenateCss = {$plugin.tx_mrmobile.concatenateCss}
+    compressJs = {$plugin.tx_mrmobile.compressJs}
+    compressCss = {$plugin.tx_mrmobile.compressCss}
+    simulateStaticDocuments = 0
+
+    baseURL = {$plugin.tx_mrmobile.Domain}
+    tx_realurl_enable = {$plugin.tx_mrmobile.realurlEnable}
+}

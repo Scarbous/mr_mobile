@@ -1,0 +1,15 @@
+{
+    "name": "scarbous/mr_mobile",
+    "description": "It is an easy way to add a mobile view to your website, without touching your desktop template.",
+    "autoload": {
+        "psr-4": {
+            "Scarbous\\MrMobile\\": "Classes/"
+        }
+    },
+    "type": "typo3-cms-extension",
+    "keywords": ["TYPO3 CMS", "templating", "bootstrap"],
+    "license": "GPL-2.0+",
+    "support": {
+        "issues": "https://github.com/scarbous/mr_mobile/issues"
+    }
+}

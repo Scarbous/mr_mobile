@@ -1,0 +1,8 @@
+formhandler {
+	rootPath = EXT:mr_mobile/Extensions/formhandler
+	email.admin {
+		sender_email = kontakt@misterknister.de
+		to_email = s.heilmeier@machen.de
+	}
+}
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:mr_mobile/Extensions/formhandler/Resources/contact/constants.txt">

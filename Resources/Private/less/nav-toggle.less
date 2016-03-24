@@ -1,0 +1,70 @@
+
+
+
+.btn-toggle-nav {
+    background-color: transparent;
+    border-radius: 50%;
+    border: @btnToggleNavborder-thickness solid @btnToggleNavColor;
+    display: block;
+    position: relative;
+    z-index: 1500;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    width: @btnToggleNavWidth;
+    height: @btnToggleNavHeight;
+    font-size: 0;
+    text-indent: -9999px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    box-shadow: none;
+    cursor: pointer;
+    transition: background @btnToggleNavTransistionDuration;
+    span {
+        display: block;
+        position: absolute;
+        top: (@btnToggleNavHeight / 2) - (@btnToggleNavBarThickness / 2) - @btnToggleNavborder-thickness;
+        left: @btnToggleNavPad;
+        right: @btnToggleNavPad;
+        height: @btnToggleNavBarThickness;
+        background: @btnToggleNavColor;
+        transition: background 0s @btnToggleNavTransistionDuration;
+        &:before, &:after {
+            position: absolute;
+            display: block;
+            left: 0;
+            width: 100%;
+            height: @btnToggleNavBarThickness;
+            background-color: @btnToggleNavColor;
+            content: "";
+            transition-duration: @btnToggleNavTransistionDuration,@btnToggleNavTransistionDuration;
+            transition-delay: @btnToggleNavTransistionDuration,0s;
+        }
+        &:before {
+            top: -@btnToggleNavBarThickness - @btnToggleNavbarSpace;
+            transition-property: top,transform;
+        }
+        &:after {
+            bottom: -@btnToggleNavBarThickness - @btnToggleNavbarSpace;
+            transition-property: bottom,transform;
+        }
+    }
+    &.is-active {
+        span {
+            background: none;
+            &:before {
+                top: 0;
+                transform: rotate(-45deg);
+            }
+            &:after {
+                bottom: 0;
+                transform: rotate(45deg);
+            }
+            &:before, &:after {
+                transition-delay: 0s,@btnToggleNavTransistionDuration;
+            }
+        }
+    }
+}
+

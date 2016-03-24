@@ -1,0 +1,32 @@
+
+plugin.tx_mrmobile {
+# cat=Mr.Mobile Template//08; type=string; label=Main content colum
+	mainContentColumn = 0
+# cat=Mr.Mobile Template//08; type=string; label=Root Pid
+	rootPid = 1
+# cat=Mr.Mobile Template//08; type=string; label=Footer Pid
+	footerPid = 9
+# cat=Mr.Mobile Template//08; type=string; label=Pagename	
+	pageName =
+# cat=Mr.Mobile Template//08; type=string; label=Logo File
+	logoFile = EXT:mr_mobile/Resources/Public/Images/mr.knister.svg
+	
+	filepaths {
+    	css			= EXT:mr_mobile/Resources/Public/Stylesheets/
+    	less		= EXT:mr_mobile/Resources/Private/less/
+    	scss		= EXT:mr_mobile/Resources/Private/scss/
+     	images      = EXT:mr_mobile/Resources/Public/Images/
+      	javascript  = EXT:mr_mobile/Resources/Public/JavaScript/
+      	
+      	layouts 	= EXT:mr_mobile/Resources/Private/Layouts/
+    	partials 	= EXT:mr_mobile/Resources/Private/Partials/
+    	templates 	= EXT:mr_mobile/Resources/Private/Templates/
+
+# cat=Mr.Mobile Template//08; type=string; label=Layouts path
+      	customLayouts 	= EXT:mr_mobile/Resources/Private/Layouts/
+# cat=Mr.Mobile Template//08; type=string; label=Partials path
+    	customPartials 	= EXT:mr_mobile/Resources/Private/Partials/
+# cat=Mr.Mobile Template//08; type=string; label=Templates path
+    	customTemplates = EXT:mr_mobile/Resources/Private/Templates/
+	}
+}
