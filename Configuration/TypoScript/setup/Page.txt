@@ -30,7 +30,7 @@ mobile {
 	includeJSFooterlibs {
 		modernizr = https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js
 		modernizr {
-		    async = 1
+		    async = 0
 			forceOnTop = 1
 			disableCompression = 1
 			excludeFromConcatenation = 1
@@ -38,7 +38,7 @@ mobile {
 		}
 		jQuery = https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js
 		jQuery {
-		    async = 1
+		    async = 0
 			forceOnTop = 1
 			disableCompression = 1
 			excludeFromConcatenation = 1
